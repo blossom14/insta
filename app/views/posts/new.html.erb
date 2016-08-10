@@ -1,17 +1,8 @@
-<H1>New Posts</H1>
-<%=form_for :post, url: posts_path do |f| %>
+<H1>New Posts </H1>
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title %>
+  <%= f.input :text %>
+	<%= f.input :emotion, collection: Post.emotions.keys %>
 
-	<p>
-		<%= f.label :title %><br>
-		<%= f.text_field :title %>
-	</p>
-	<p>
-		<%= f.label :text %><br>
-		<%= f.text_area :text %>
-	</p>
-
-	<p>
-		<%= f.submit %>
-
-	</p>
+  <%= f.button :submit %>
 <% end %>

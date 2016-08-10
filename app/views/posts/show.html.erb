@@ -6,6 +6,10 @@
   <strong>Text:</strong>
   <%= @post.text %>
 </p>
+<p>
+  <strong>Emotion: </strong>
+  <%= @post.emotion %>
+</p>  
 
 <%= @post.likes.size %> 명이 좋아합니다.
   <% if current_user.is_like?(@post) %>
