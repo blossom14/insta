@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments
+    post "/like", to: "likes#like_toggle"
   end
 
   root 'welcome#index'

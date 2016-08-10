@@ -39,4 +39,9 @@ def self.from_omniauth(auth)
   end
 end
 
+# Like관련 메소드
+def is_like?(post)
+    Like.find_by(user_id: self.id, post_id: post.id).present?
+end
+
 end

@@ -7,6 +7,14 @@
   <%= @post.text %>
 </p>
 
+<%= @post.likes.size %> 명이 좋아합니다.
+  <% if current_user.is_like?(@post) %>
+      <%= link_to "좋아요 취소", post_like_path(@post), method: "post" %>
+  <% else %>
+      <%= link_to "좋아요", post_like_path(@post), method: "post" %>
+
+  <% end %>
+
 
 	<H1>Add a comment:</H1>
 <%= form_for([@post, @post.comments.build]) do |f| %>
