@@ -1,7 +1,17 @@
 source 'https://rubygems.org'
 
+# 환경변수 노출 방지
+gem "figaro"
+
+# 해쉬태그 기능 구현
+gem 'simple_hashtag'
+
+# 페이스북 로그인 구현
 gem 'omniauth-facebook'
+
+# 회원가입, 로그인 기능 구현
 gem 'devise'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
