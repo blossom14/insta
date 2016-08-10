@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+	get 'hashtags/',         to: 'hashtags#index',     as: :hashtags
+	get 'hashtags/:hashtag', to: 'hashtags#show',      as: :hashtag
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :posts do
