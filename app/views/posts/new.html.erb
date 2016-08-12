@@ -1,6 +1,7 @@
 <H1>New Posts </H1>
 <%= simple_form_for @post do |f| %>
   <%= f.input :title %>
+  <%= f.file_field :photo %>
   <%= f.input :text %>
 	<%= f.input :emotion, collection: Post.emotions.keys %>
 

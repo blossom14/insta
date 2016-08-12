@@ -13,7 +13,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  config.omniauth :facebook, ENV["FB_APP_ID"], ENV["FB_APP_SECRET"]
+  config.omniauth :facebook, "156482418112969", "1b2dcec96a71696d0292b59eaa85df21"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
