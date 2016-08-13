@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-
+		@post.user = current_user
 		@post.save
 		redirect_to @post
 	end
@@ -22,6 +22,6 @@ class PostsController < ApplicationController
 
 private
 	def post_params
-		params.require(:post).permit(:title, :text, :emotion)
+		params.require(:post).permit(:title, :text, :emotion, :photo)
 	end
 end

@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :title
       t.text :text
       t.integer :emotion
+      t.references :user
       t.timestamps
     end
   end

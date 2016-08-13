@@ -1,0 +1,13 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.col-md-3 {padding: 10px}
+.crop-height {
+	height: 20d0px;
+	overflow: hidden;
+}
+#userid {
+	position:relative;
+	top:15px;
+}
+

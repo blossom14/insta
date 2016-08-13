@@ -2,6 +2,10 @@ class User < ApplicationRecord
   has_many :posts
   has_many :likes
   has_many :liked_posts, through: :likes, source: :post
+  has_many :follower_relations, foreign_key: "followed_id", class_name: "Follow"
+  has_many :followers, through: :follower_relations, source: :follower
+  has_many :following_relations, foreign_key: "follower_id", class_name: "Follow"
+  has_many :followings, through: :following_relations, source: :followed
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -17,9 +21,6 @@ class User < ApplicationRecord
 	    user.name = auth.info.name   # assuming the user model has a name
 	    user.image = auth.info.image # assuming the user model has an image
   	end
-  # 이 때는 이상하게도 after_create 콜백이 호출되지 않아서 아래와 같은 조치를 했다.
-  # user.add_role :user if user.roles.empty?
-  user   # 최종 반환값은 user 객체이어야 한다.
 end
 
   def self.new_with_session(params, session)

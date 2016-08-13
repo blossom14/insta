@@ -7,6 +7,15 @@
 
   <% end %>
 
+
+  <% if user_signed_in? && current_user != @post.user %>
+    <% if current_user.followings.include?(@post.user) %>
+      <button class="right btn">팔로우 취소</button>
+    <% else %>
+      <button class="right btn">팔로우</button>
+    <% end %>
+  <% end %>
+  
   <h2>Comments</h2>
   <% @post.comments.each do |comment| %>
     <p>

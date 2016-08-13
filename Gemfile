@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'carrierwave'
+gem 'bootstrap-sass', '~> 3.3.6'
 # 환경변수 노출 방지
 gem "figaro"
 
