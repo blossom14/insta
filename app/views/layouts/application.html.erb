@@ -25,39 +25,29 @@
                     <li class="hidden active">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="">
-                        <a class="page-scroll" href="#services">Services</a>
+                    <li>
+                        <a class="page-scroll" href="/">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="/hashtags">Hashtag</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#team">Emotion</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+                    <span id="userid">
                     <% if user_signed_in? %>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
                         <%= image_tag(current_user.image, size: '20x20', style:'border-radius:3px;vertical-align:top;') if current_user.image %>
                         <%= current_user.name %> 
                         <% end %>
-                
+                        </span>
+                    </li>
                     </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-  
-        
-     
-  
 
     <%= yield %>
   </body>
