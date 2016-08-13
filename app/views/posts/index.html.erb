@@ -19,20 +19,21 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script src="inc/jquery.mb.YTPlayer.js"></script>
 </head>
 <body>
+    <div id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=GquEnoqZAK0',containment:'body',autoPlay:true, mute:true, startAt:0, opacity:1}">My video</div>
 <h1>인스타따라잡기</h1>
 
-<% if user_signed_in? %>
-  <p><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?" }, class: 'btn btn-default'%></p>
-<% else %>
-  <p><%= link_to "로그인", new_user_session_path, class: 'btn btn-default' %></p>
-<p><%= link_to "페이스북으로 로그인", user_facebook_omniauth_authorize_path %></p>
+  <% if user_signed_in? %>
+    <p><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?" }, class: 'btn btn-default'%></p>
+  <% else %>
+    <p><%= link_to "로그인", new_user_session_path, class: 'btn btn-default' %></p>
+  <p><%= link_to "페이스북으로 로그인", user_facebook_omniauth_authorize_path %></p>
 
-<% end %>
+  <% end %>
 
-<h1>Listing posts</h1>	
+<h1>Listing posts</h1>
 
 
     <!-- Page Content -->
@@ -57,11 +58,11 @@
                 </a>
             </div>
         <% end %>
-        </div> 
-  
+        </div>
+
         <!-- /.row -->
 
- 
+
 
         <!-- Pagination -->
         <div class="row text-center">
