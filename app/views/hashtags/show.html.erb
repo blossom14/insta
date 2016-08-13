@@ -1,8 +1,32 @@
-<h1><%= params[:hashtag] %></h1>
+<head>
+<style>
+body {
+	margin:100px;
+}
+.label-default {
+	color:white;
+	background-color:#FF848F;
+	font-size: 25px;
+}
+.eachpost {
+	width: 500px;
+	position:relative;
+	top: 20px;
+	border:2px solid #FFDAD7;
+	padding: 40px;
+	border-radius: 5px
+	}
+</style>
+</head>
+
+<span class="label label-default">#<%= params[:hashtag] %></span>
 <% if @hashtagged %>
   <% @hashtagged.each do |hashtagged| %>
+  <div class="eachpost">
     <%= render_hashtaggable hashtagged %>
+    </div>
   <% end -%>
 <% else -%>
   <p>There is no match for the <em><%= params[:hashtag] %></em> hashtag.</p>
 <% end -%>
+
