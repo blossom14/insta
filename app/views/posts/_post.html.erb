@@ -23,7 +23,7 @@
   <% if current_user.is_like?(post) %>
       <%= link_to "좋아요 취소", post_like_path(post), method: "post" %>
   <% else %>
-      <%= link_to "좋아요", post_like_path(post), method: "post" %>
+      <%= link_to  "좋아요", post_like_path(post), method: "post" %>
 
   <% end %>
 

@@ -2,14 +2,14 @@
 <p>
   <strong>팔로워</strong> : <%= current_user.followers.length %> | 
   <% current_user.followers.each do |follower| %>
-      <%= follower %>, 
+      <%= follower.name %>, 
   <% end %>
 </p>
 
 <p>
 	<strong>팔로잉</strong> : <%= current_user.followings.length %> |
 	<% current_user.followings.each do |following| %>
-      <%= following %>, 
+      <%= following.name %>, 
   <% end %>
 </p>
 
