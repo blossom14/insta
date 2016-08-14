@@ -1,7 +1,7 @@
 class FollowsController < ApplicationController
 
 	def create
-		Follow.create(followed_id: params[:folloed_id],
+		Follow.create(followed_id: params[:followed_id],
 					  follower_id: current_user.id)
 		redirect_to :back
 	end

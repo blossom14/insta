@@ -1,3 +1,16 @@
-<h1>모든 사람들이 쓴 글을 보기</h1>
+<h1>My page</h1>
+<p>
+  <strong>팔로워</strong> : <%= current_user.followers.length %> | 
+  <% current_user.followers.each do |follower| %>
+      <%= follower %>, 
+  <% end %>
+</p>
+
+<p>
+	<strong>팔로잉</strong> : <%= current_user.followings.length %> |
+	<% current_user.followings.each do |following| %>
+      <%= following %>, 
+  <% end %>
+</p>
 
 <%= render partial: "list", locals: {zone: @posts } %>

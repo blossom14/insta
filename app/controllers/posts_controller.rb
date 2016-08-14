@@ -24,6 +24,9 @@ class PostsController < ApplicationController
 		@posts = Post.where(user: @user)
 	end
 
+	def newsfeed
+		@posts = Post.all
+	end
 
 private
 	def post_params

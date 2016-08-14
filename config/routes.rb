@@ -9,12 +9,15 @@ Rails.application.routes.draw do
     post "/like", to: "likes#like_toggle"
   end
 
+
+  resources :follows, only: [:create, :destroy]
   get '/timeline/:id' => 'posts#timeline'
 
   root 'welcome#index'
   get 'welcome/index'
   get '/emotions' => 'emotions#index'
   get '/emotions/:name' => 'emotions#emotion'
+  get '/newsfeed' => 'posts#newsfeed'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
