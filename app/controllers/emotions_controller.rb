@@ -4,7 +4,7 @@ class EmotionsController < ApplicationController
 		@posts = @emotion.posts
 	end
 	def index
-		@emotions = Emotion.find_by(user: current_user)
+		@emotions = Emotion.all
 	end
 
 end
