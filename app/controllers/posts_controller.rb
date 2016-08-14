@@ -16,16 +16,16 @@ class PostsController < ApplicationController
 	end
 
 	def index
-		@posts = Post.where(user: current_user)
+		@posts = Post.where(user: current_user).paginate(:page => params[:page])
 	end
 
 	def timeline
 		@user = User.find(params[:id])
-		@posts = Post.where(user: @user)
+		@posts = Post.where(user: @user).paginate(:page => params[:page])
 	end
 
 	def newsfeed
-		@posts = Post.all
+		@posts = Post.paginate(:page => params[:page])
 	end
 
 private

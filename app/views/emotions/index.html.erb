@@ -1,3 +1,11 @@
+<div class="text-center">
 <% @emotions.each do |emotion| %>
-	<%= link_to emotion.name, "/emotions/#{emotion.name}" %><br>
+	<div style="display:inline-block; padding-left: 15px;">
+		<%= link_to "/emotions/#{emotion.name}" do %>
+			<%= image_tag "#{emotion.name}.png", size: "40x40" %><br>
+			
+		<% end %>
+		<%= emotion.name %>
+	</div>
 <% end %>
+</div>

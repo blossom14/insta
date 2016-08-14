@@ -1,16 +1,21 @@
-<h1>My page</h1>
-<p>
+<div>
+	<div class="left" style="display:inline-block;">
+	<%= image_tag(current_user.image, size: '50x50', style:'border-radius:3px;') %>
+	<strong><%= current_user.name %></strong>
+	</div>
+	
+	<div class="pull-right" style="margin-top: 15px;">
   <strong>팔로워</strong> : <%= current_user.followers.length %> | 
   <% current_user.followers.each do |follower| %>
       <%= follower.name %>, 
   <% end %>
-</p>
-
-<p>
-	<strong>팔로잉</strong> : <%= current_user.followings.length %> |
+  
+  
+	<strong>팔로잉</strong> : <%= current_user.followings.length %>
 	<% current_user.followings.each do |following| %>
       <%= following.name %>, 
   <% end %>
+  </div>
 </p>
-
+</div>
 <%= render partial: "list", locals: {zone: @posts } %>

@@ -1,3 +1,5 @@
-<h1><%= @emotion.name %></h1>
+<div class="text-center">
+<%= image_tag "#{@emotion.name}", size: "100x100" %>
+
 
 <%= render partial: "posts/list", locals: {zone: @posts} %>

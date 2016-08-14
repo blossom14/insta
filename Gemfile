@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# 페이지 구별 구현을 위한 젬
+gem 'will_paginate'
+
 gem 'carrierwave'
 gem 'bootstrap-sass', '~> 3.3.6'
 # 환경변수 노출 방지

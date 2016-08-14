@@ -39,11 +39,19 @@
                     </li>
                     <li>
                     <span id="userid">
+                        <% if user_signed_in? %>
+                            <%= image_tag(current_user.image, size: '20x20', style:'border-radius:3px;vertical-align:top;') if current_user.image %>
+                            <%= current_user.name %> 
+                          
+                    <% end %>
+                        
+                    </span>
+                    </li>
+                    <li>
                     <% if user_signed_in? %>
-                        <%= image_tag(current_user.image, size: '20x20', style:'border-radius:3px;vertical-align:top;') if current_user.image %>
-                        <%= current_user.name %> 
-                        <% end %>
-                        </span>
+                      <%= link_to 'Logout', destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?" }, class: "page-scroll" %>
+                    <% end %>
+
                     </li>
                     </ul>
             </div>
@@ -51,9 +59,12 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <div class="container" style="padding-top: 50px;">
-
-        <%= yield %>
+    <div class="container" style="padding-top: 100px;">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <%= yield %>
+        </div>
+        <div class="col-md-2"></div>
     </div>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
