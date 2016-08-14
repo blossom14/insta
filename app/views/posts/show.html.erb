@@ -1,20 +1,4 @@
 <%= render @post %>
-<%= @post.likes.size %> 명이 좋아합니다.
-  <% if current_user.is_like?(@post) %>
-      <%= link_to "좋아요 취소", post_like_path(@post), method: "post" %>
-  <% else %>
-      <%= link_to "좋아요", post_like_path(@post), method: "post" %>
-
-  <% end %>
-
-
-  <% if user_signed_in? && current_user != @post.user %>
-    <% if current_user.followings.include?(@post.user) %>
-      <button class="right btn">팔로우 취소</button>
-    <% else %>
-      <button class="right btn">팔로우</button>
-    <% end %>
-  <% end %>
   
   <h2>Comments</h2>
   <% @post.comments.each do |comment| %>
