@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     post "/like", to: "likes#like_toggle"
   end
 
+  get '/timeline/:id' => 'posts#timeline'
+
   root 'welcome#index'
   get 'welcome/index'
 

@@ -9,6 +9,10 @@
   <%= post.text %>
 </p>
 <p>
+	<strong>Author:</strong>
+	<%= link_to post.user.name, "/timeline/#{post.user.id}" %>
+</p>
+<p>
   <strong>Emotion: </strong>
   <%= post.emotion %>
 </p>  
