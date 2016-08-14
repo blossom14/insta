@@ -20,12 +20,13 @@ class PostsController < ApplicationController
 	end
 
 	def timeline
-		@posts = Post.where(user_id: params[:id])
+		@user = User.find(params[:id])
+		@posts = Post.where(user: @user)
 	end
 
 
 private
 	def post_params
-		params.require(:post).permit(:title, :text, :emotion, :photo)
+		params.require(:post).permit(:title, :text, :emotion_id, :photo)
 	end
 end

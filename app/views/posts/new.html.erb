@@ -1,9 +1,18 @@
 <H1>New Posts </H1>
 <%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
-  <%= f.file_field :photo %>
-  <%= f.input :text %>
-	<%= f.input :emotion, collection: Post.emotions.keys %>
+  <p>
+  	<%= f.input :title, label: false, placeholder: "title" %>
+	</p>
+  <p>
+  	<%= f.file_field :photo %>
+	</p>
+	<p>
+  	<%= f.text_area :text, label: false, placeholder: "내용을 적어주세요" %><br>
+  </p>
+  <p>
+	감정을 표현해주세요<br>
+		<%= f.collection_select :emotion_id, Emotion.order(:name), :id, :name %>
+	</p>
 
   <%= f.button :submit %>
 <% end %>

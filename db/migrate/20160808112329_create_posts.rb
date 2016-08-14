@@ -3,8 +3,8 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     create_table :posts do |t|
       t.string :title
       t.text :text
-      t.integer :emotion
       t.references :user
+      t.references :emotion
       t.timestamps
     end
   end

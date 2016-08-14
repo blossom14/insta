@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+emotions = ["happy", "sad", "angry", "soso", "heart"]
+
+emotions.each {|emotion| Emotion.create(name: emotion)}
