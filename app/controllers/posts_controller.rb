@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 	end
 
 	def index
+		@post = Post.new
 		@posts = Post.where(user: current_user)
 	end
 
