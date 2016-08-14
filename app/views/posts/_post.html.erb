@@ -17,7 +17,7 @@
 </p>
 <p>
   <strong>Emotion: </strong>
-  <%= link_to post.emotion.name, "/emotion/#{post.emotion.name}" %>
+  <%= link_to post.emotion.name, "/emotions/#{post.emotion.name}" %>
 </p>  
 <%= post.likes.size %> 명이 좋아합니다.
   <% if current_user.is_like?(post) %>
