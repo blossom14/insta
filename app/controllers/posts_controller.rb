@@ -19,6 +19,10 @@ class PostsController < ApplicationController
 		@posts = Post.all
 	end
 
+	def timeline
+		@posts = Post.where(user_id: params[:id])
+	end
+
 
 private
 	def post_params

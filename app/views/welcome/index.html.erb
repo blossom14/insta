@@ -1,40 +1,7 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>4 Col Portfolio - Start Bootstrap Template</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/4-col-portfolio.css" rel="stylesheet">
-    <style>
-        .loginbox {
-            margin: 100px;
-        }
-        #diaryram {
-            font-family: 'Lobster', cursive;
-            font-size: 100px;
-            color: white;
-            font-weight:lighter;
-        }
-    </style>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="inc/jquery.mb.YTPlayer.js"></script>
-</head>
-<body>
-    <div id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=GquEnoqZAK0',containment:'body',autoPlay:true, mute:true, startAt:0, opacity:1}">My video</div>
+<div id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=GquEnoqZAK0',containment:'body',autoPlay:true, mute:true, startAt:0, opacity:1}">My video</div>
  
-  <div class="loginbox">
+<div class="loginbox">
   <p id="diaryram">Diaryram</p>
   <% if user_signed_in? %>
     <p><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?" }, class: 'btn btn-default'%></p>
@@ -44,5 +11,5 @@
 
   <% end %>
   </div>
-  </body>
+<script src="inc/jquery.mb.YTPlayer.js"></script>
 
