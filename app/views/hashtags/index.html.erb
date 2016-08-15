@@ -1,26 +1,23 @@
 <head>
 <style>
-.label-default{
+.label-default {
+	color:white;
 	background-color:#FF848F;
-	padding:8px;
+	font-size: 25px;
 }
 .tags{
 	position: relative;
-	top: 20px;
 }
-a {
+.label-default a {
 	color:white;
-	font-size: 15px;
 }
 </style>
-
 </head>
 
 <body>
-	<h1>Hashtags</h1>
 	<div class="tags">
 	<% @hashtags.each do |hashtag| %>
-  	<span class="label label-default"><%= link_to hashtag.name, hashtag_path(hashtag.name) %></span>
+  	<span class="label label-default"><%= link_to "#"+hashtag.name, hashtag_path(hashtag.name) %></span>
 	<% end %>
 	</div>
 </body>

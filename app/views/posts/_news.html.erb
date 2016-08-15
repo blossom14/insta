@@ -1,17 +1,24 @@
 <%= simple_form_for @post do |f| %>
-  <p>
-  	<%= f.input :title, label: false, placeholder: "title" %>
-	</p>
-  <p>
-  	<%= f.file_field :photo %>
-	</p>
-	<p>
-  	<%= f.text_area :text, label: false, placeholder: "내용을 적어주세요" %><br>
-  </p>
-  <p>
-	감정을 표현해주세요<br>
-		<%= f.collection_select :emotion_id, Emotion.order(:name), :id, :name %>
-	</p>
-
-  <%= f.button :submit %>
+  <br>
+  <div class="form-group">
+  	<%= f.text_field :title, class: "form-control", label: false %>
+	</div>
+  <br>
+	<div class="form-group">
+  	<%= f.text_area :text, class: "form-control", label: false, rows: "10" %><br>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-3">
+      <%= f.file_field :photo %>
+    </div>
+    <div class="btn-group col-md-7 text-center" data-toggle="buttons">
+  		<%= f.collection_radio_buttons :emotion_id, Emotion.order(:name), :id, :name do |b| %>
+        <%= b.radio_button %><br>
+        <%= image_tag "#{b.text}.png", size: "40x40", style: "margin: 0 10px;" %>
+      <% end %>
+  	</div>
+    <div class="form-group col-md-2 text-right">
+      <%= f.button :submit, class: "btn btn-default", value: "Write" %>
+    </div>
+  </div>
 <% end %>
