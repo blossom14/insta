@@ -1,7 +1,16 @@
+<head>
+<style>
+.profile {
+	text-align:center;
+}
+</style>
+</head>
+
+<body>
 <div>
-	<div class="left" style="display:inline-block;">
-	<%= image_tag(current_user.image, size: '50x50', style:'border-radius:3px;') %>
-	<strong><%= current_user.name %></strong>
+	<div class="profile">
+	<p><%= image_tag(current_user.image, size: '50x50', style:'border-radius:3px;') %></p>
+	<p><strong><%= current_user.name %></strong></p>
 	</div>
 	
 	<div class="pull-right" style="margin-top: 15px;">
@@ -19,3 +28,4 @@
 </p>
 </div>
 <%= render partial: "list", locals: {zone: @posts } %>
+</body>

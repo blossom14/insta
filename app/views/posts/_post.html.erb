@@ -1,24 +1,48 @@
+<head>
+<style>
+body {
+  margin:100px;
+}
+.eachpost {
+  width: 500px;
+  position:relative;
+  top: 20px;
+  border:2px solid #FFDAD7;
+  padding: 40px;
+  border-radius: 5px
+  }
+.left {
+  text-align: right;
+}
+strong {
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<div class="eachpost">
 <p>
- <strong>Title:</strong>
-  <%= post.title %>
+ <center><strong><%= post.title %></strong></center>
+</p>
+<p class="left">
+  작성자:
+  <%= link_to post.user.name, "/timeline/#{post.user.id}" %>
+</p>
+<p class="left">
+  <div class="left"><%= post.created_at.strftime("%Y년 %m월 %d일 %I:%M %p") %></div>
+<p>
+  <br><%= image_tag post.photo, :width => 400 %>
 </p>
 <p>
-  <%= image_tag post.photo, :width => 400 %>
+  Emotion: 
+  <%= link_to post.emotion.name, "/emotions/#{post.emotion.name}" %>
 </p>
-  <strong>Text:</strong>
+<p>
   <%= post.text %>
 </p>
-<p>
-  <strong>Date:</strong>
-  <%= post.created_at.strftime("%Y년 %m월 %d일 %I:%M %p") %>
-</p>
-	<strong>Author:</strong>
-	<%= link_to post.user.name, "/timeline/#{post.user.id}" %>
-</p>
-<p>
-  <strong>Emotion: </strong>
-  <%= link_to post.emotion.name, "/emotions/#{post.emotion.name}" %>
-</p>  
+
+<p class="left">  
 <%= post.likes.size %> 명이 좋아합니다.
   <% if current_user.is_like?(post) %>
       <%= link_to "좋아요 취소", post_like_path(post), method: "post" %>
@@ -26,16 +50,20 @@
       <%= link_to  "좋아요", post_like_path(post), method: "post" %>
 
   <% end %>
-
+  </p>
+<div class="left">
 <% if user_signed_in? && current_user != post.user %>
     <% if current_user.followings.include?(post.user) %>
     <%= form_tag follows_path(post.user.id), method: :delete, class: "right" do %>
-    	<button class="btn">팔로우 취소</button>
+      <button class="btn">팔로우 취소</button>
     <% end %>
    <% else %>
-   	<%=form_tag follows_path, class: "right" do %>
-   		<input type="hidden" name="followed_id" value="<%= post.user.id %>" />
-   		<button class="btn">팔로우</button>
-   	<% end %>
+    <%=form_tag follows_path, class: "right" do %>
+      <input type="hidden" name="followed_id" value="<%= post.user.id %>" />
+      <button class="btn">팔로우</button>
+    <% end %>
    <% end %>
  <% end %>
+</div>
+</div>
+</body>

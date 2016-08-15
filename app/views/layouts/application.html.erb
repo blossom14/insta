@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Insta</title>
+    <title>Diaryram</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
+  <style>
+  .navbar-fixed-top {
+    background-color: #FFF0F0;
+  }
+  </style>  
   </head>
 
   <body>
@@ -17,6 +21,14 @@
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="/">Diaryram</a>
+                    <span id="userid">
+                        <% if user_signed_in? %>
+                            <%= image_tag(current_user.image, size: '20x20', style:'border-radius:3px;vertical-align:top;') if current_user.image %>
+                            <%= current_user.name %> 
+                          
+                    <% end %>
+                        
+                    </span>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,16 +48,6 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="/emotions">Emotion</a>
-                    </li>
-                    <li>
-                    <span id="userid">
-                        <% if user_signed_in? %>
-                            <%= image_tag(current_user.image, size: '20x20', style:'border-radius:3px;vertical-align:top;') if current_user.image %>
-                            <%= current_user.name %> 
-                          
-                    <% end %>
-                        
-                    </span>
                     </li>
                     <li>
                     <% if user_signed_in? %>

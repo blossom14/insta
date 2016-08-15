@@ -1,4 +1,19 @@
+<head>
+<style>
+.label-default {
+  color:white;
+  background-color:#FF848F;
+  font-size: 25px;
+}
+#diary {
+  margin-bottom:30px;
+}
+</style>
+</head>
+<span class="label label-default"><%= @post.created_at.strftime("%Y년 %m월 %d일") %></span>
+<div id="diary">
 <%= render @post %>
+</div>
 
     <div id="lv-container" data-id="city" data-uid="MTAyMC8yNjc1NS8zMzQ1">
     <script type="text/javascript">
@@ -17,33 +32,7 @@
     <noscript>라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요</noscript>
     </div>
 
-  <h2>Comments</h2>
-  <% @post.comments.each do |comment| %>
-    <p>
-      <strong>Commenter:</strong>
-      <%= comment.commenter %>
-    </p>
 
-    <p>
-      <strong>Comment:</strong>
-      <%= comment.body %>
-    </p>
-  <% end %>
-
-	<H1>Add a comment:</H1>
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
 
 <%= link_to 'Back', posts_path %>
 | <%= link_to 'Edit', edit_post_path(@post) %>
