@@ -13,9 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-//= require jquery
+//= require bootstrap
 //= require bootstrap-sprockets
+//= require_tree .
 
 $(function(){
       $(".player").YTPlayer();

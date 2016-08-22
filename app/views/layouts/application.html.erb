@@ -3,8 +3,8 @@
   <head>
     <title>Diaryram</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <style>
   .navbar-fixed-top {
     background-color: #FFF0F0;
@@ -69,6 +69,5 @@
         <div class="col-md-2"></div>
     </div>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
