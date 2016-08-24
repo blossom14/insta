@@ -35,6 +35,10 @@ class PostsController < ApplicationController
 
 	def newsfeed
 		@posts = Post.paginate(:page => params[:page])
+	  respond_to do |format|
+	    format.html
+	    format.json
+	  end
 	end
 
 private
